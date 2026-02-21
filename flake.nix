@@ -26,16 +26,6 @@
 
     nur.url = "github:nix-community/NUR";
 
-    # thunderbird-catppuccin = {
-    #   url = "github:catppuccin/thunderbird";
-    #   flake = false;
-    # };
-
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     yazi-flavors = {
       url = "github:yazi-rs/flavors";
       flake = false;
@@ -53,6 +43,7 @@
     nixpkgs,
     home-manager,
     nix-index-database,
+    sops-nix,
     ...
   }: let
     inherit (nixpkgs.lib) genAttrs;

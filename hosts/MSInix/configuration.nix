@@ -8,9 +8,6 @@
     [
       ./hardware-configuration.nix
 
-      inputs.stylix.nixosModules.stylix
-      ../../modules/interface/stylix.nix
-
       ../../modules/system
       ../../modules/scripts
       ../../modules/programs/misc/upower

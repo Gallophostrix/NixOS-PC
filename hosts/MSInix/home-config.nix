@@ -27,7 +27,6 @@ in {
       ../../modules/programs/cli/dev-tools.nix
 
       ../../modules/programs/editor/zeditor
-      # ../../modules/programs/editor/libreoffice
 
       ../../modules/programs/media/freetube
       ../../modules/programs/media/imv
@@ -40,7 +39,6 @@ in {
       ../../modules/programs/desktop-apps.nix
 
       ../../modules/interface/interface.nix
-      ../../modules/interface/theme.nix
       ../../modules/interface/desktop/hyprland
     ]
     ++ lib.optional (hostVars.games or false)
