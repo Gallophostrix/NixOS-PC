@@ -50,7 +50,7 @@
         foot = false;
         fuzzel = false;
         ghostty = false;
-        gtk = false;
+        gtk = true;
         helix = false;
         hyprland = false;
         hyprtoolkit = false;
@@ -59,7 +59,7 @@
         mango = false;
         niri = false;
         pywalfox = false;
-        qt = false;
+        qt = true;
         spicetify = true;
         sway = true;
         telegram = false;

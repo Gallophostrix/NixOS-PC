@@ -5,8 +5,6 @@
       # --- Zathura (document) ---
       recolor = true;
       recolor-keephue = true;
-      # recolor-lightcolor = "#1e1e2e"; # Mocha theme
-      # recolor-darkcolor = "#cdd6f4"; # Mocha theme
       window-title-basename = true;
       guioptions = "none";
       font = "JetBrainsMono Nerd Font 15";
