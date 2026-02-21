@@ -8,8 +8,10 @@
       sway.enable = true;
 
       alacritty.enable = false;
+      spicetify.enable = false;
       swaync.enable = false;
       yazi.enable = false;
+      zathura.enable = false;
       zed.enable = false;
 
       # Self defined
@@ -38,8 +40,6 @@
 
       anki.enable = true;
       obsidian.enable = true;
-      spicetify.enable = true;
-      zathura.enable = true;
     };
   };
 }

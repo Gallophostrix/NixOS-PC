@@ -39,7 +39,7 @@
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "22:30";
-        generationMethod = "M3-Content";
+        generationMethod = "content";
       };
       templates = {
         # check
@@ -57,7 +57,7 @@
         vicinae = false;
         walker = false;
         code = false;
-        spicetify = false; ###
+        spicetify = true;
         telegram = false;
         cava = false;
         yazi = true;
@@ -67,7 +67,7 @@
         mango = false;
         zathura = true;
         zed = true;
-        enableUserTemplates = true;
+        enableUserTheming = true;
       };
       wallpaper = {
         enabled = true;
@@ -76,10 +76,10 @@
         monitorDirectories = [];
         enableMultiMonitorDirectories = true;
         recursiveSearch = true;
-        setWallpaperOnAllMonitors = false;
+        setWallpaperOnAllMonitors = true;
         fillMode = "crop";
         fillColor = "#000000";
-        automationEnabled = false;
+        automationEnabled = true;
         wallpaperChangeMode = "random";
         randomIntervalSec = 300;
         transitionDuration = 1500;
@@ -199,9 +199,6 @@
             }
             {
               id = "Bluetooth";
-            }
-            {
-              id = "ScreenRecorder";
             }
             {
               id = "WallpaperSelector";
@@ -376,17 +373,6 @@
           }
         ];
       };
-      screenRecorder = {
-        directory = "/mnt/data/Images/Screenshots";
-        frameRate = 60;
-        audioCodec = "opus";
-        videoCodec = "h264";
-        quality = "very_high";
-        colorRange = "limited";
-        showCursor = true;
-        audioSource = "default_output";
-        videoSource = "portal";
-      };
       systemMonitor = {
         cpuWarningThreshold = 80;
         cpuCriticalThreshold = 90;
@@ -423,5 +409,21 @@
       input_path = "~/nixcfg/modules/interface/desktop/hyprland/noctalia-templates/hyprland.conf"
       output_path = "~/.config/hypr/hyprland-noctalia.conf"
     '';
+    plugins = {
+      sources = [
+        {
+          enabled = true;
+          name = "Official Noctalia Plugins";
+          url = "https://github.com/noctalia-dev/noctalia-plugins";
+        }
+      ];
+      states = {
+        keybind-cheatsheet = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+      };
+      version = 2;
+    };
   };
 }
