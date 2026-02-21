@@ -20,10 +20,8 @@
   scripts = [
     (importScript ./rebuild.nix)
     (importScript ./rollback.nix)
-    (importScript ./launcher.nix)
     (importScript ./extract.nix)
     (importScript ./driverinfo.nix)
-    (importScript ./underwatt.nix)
     # add more here
   ];
 in {

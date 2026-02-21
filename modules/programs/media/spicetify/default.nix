@@ -15,8 +15,6 @@ in {
     spotifyPackage = pkgs.spotify;
     windowManagerPatch = false;
 
-    # theme = spicePkgs.themes.catppuccin;
-    # colorScheme = "mocha";
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       shuffle # shuffle+ (special characters are sanitized out of ext names)

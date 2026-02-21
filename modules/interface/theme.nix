@@ -5,9 +5,10 @@
       noctalia-shell.enable = false;
       gtk.enable = false;
       qt.enable = false;
-      sway.enable = true;
+      sway.enable = false;
 
       alacritty.enable = false;
+      cava.enable = false;
       spicetify.enable = false;
       swaync.enable = false;
       yazi.enable = false;
@@ -18,6 +19,7 @@
       fish.enable = false;
 
       # Unused
+      rofi.enable = false;
       waybar.enable = false;
       opencode.enable = false;
 
@@ -29,14 +31,9 @@
       };
 
       bat.enable = true;
-      cava = {
-        enable = true;
-        rainbow.enable = true;
-      };
       fzf.enable = true;
       lazygit.enable = true;
       mpv.enable = true;
-      rofi.enable = true;
 
       anki.enable = true;
       obsidian.enable = true;

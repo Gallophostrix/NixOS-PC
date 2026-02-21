@@ -7,7 +7,6 @@
   imports = [
     ./hyprland.nix
     ./noctalia.nix
-    ./programs/rofi
     ./programs/hyprlock
     ./programs/hypridle
     ./programs/hyprcursor

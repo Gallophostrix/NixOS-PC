@@ -3,9 +3,8 @@
     enable = true;
     settings = {
       general = {
-        framerate = 60;
-        sensitivity = 100;
-        autosens = 1;
+        # sensitivity = 100;
+        # autosens = 1;
       };
       # color = {
       #   gradient = 1;
