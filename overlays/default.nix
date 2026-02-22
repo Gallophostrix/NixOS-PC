@@ -1,21 +1,17 @@
 {
-  host,
   inputs,
-  ...
+  host,
 }: {
   # Overlay custom derivations into nixpkgs so you can use pkgs.<name>
-  additions = final: _prev:
-    import ../pkgs {
-      pkgs = final;
-      inherit host;
-    };
+  additions = final: prev: {
+    # From own packages
+    # mon-package = final.callPackage ../pkgs/mon-package {};
+    #  From external modules
+    # inherit (inputs.nur.packages.${final.system}) some-nur-pkg;
+  };
 
-  # https://wiki.nixos.org/wiki/Overlays
-  modifications = final: _prev: {
-    nur = inputs.nur.overlays.default;
-    stable = import inputs.nixpkgs-stable {
-      system = final.system;
-      config.allowUnfree = true;
-    };
+  # Patch an existing package into nixpkgs
+  modifications = final: prev: {
+    # discord = prev.discord.overrideAttrs (old: { ... });
   };
 }

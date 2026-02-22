@@ -2,9 +2,11 @@
   description = "NixOS config + Home Manager";
 
   inputs = {
+    # nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
+    # nixos modules
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak?ref=latest";
     };
@@ -14,26 +16,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
+    nur.url = "github:nix-community/NUR";
+
+    # home-manager modules
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nur.url = "github:nix-community/NUR";
-
-    yazi-flavors = {
-      url = "github:yazi-rs/flavors";
-      flake = false;
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -42,8 +35,6 @@
     self,
     nixpkgs,
     home-manager,
-    nix-index-database,
-    sops-nix,
     ...
   }: let
     inherit (nixpkgs.lib) genAttrs;
@@ -75,14 +66,6 @@
           # Home Manager as a NixOS module
           home-manager.nixosModules.home-manager
 
-          # Apply overlays to nixpkgs (if any)
-          ({lib, ...}: {
-            nixpkgs.overlays =
-              (lib.optionals (builtins.isList overlays) overlays)
-              ++ (lib.optionals (overlays ? additions) [overlays.additions])
-              ++ (lib.optionals (overlays ? modifications) [overlays.modifications]);
-          })
-
           # Glue to bind HM user and pass special args to HM
           {
             # Share pkgs between NixOS and HM
@@ -101,6 +84,14 @@
             # Bind your Home-Manager root config (aggregates your HM modules)
             home-manager.users.${hostVars.username} = import ./hosts/${host}/home-config.nix;
           }
+
+          # Apply overlays to nixpkgs (if any)
+          ({lib, ...}: {
+            nixpkgs.overlays =
+              (lib.optionals (builtins.isList overlays) overlays)
+              ++ (lib.optionals (overlays ? additions) [overlays.additions])
+              ++ (lib.optionals (overlays ? modifications) [overlays.modifications]);
+          })
         ];
       };
   in {
