@@ -9,7 +9,7 @@
     ./noctalia.nix
     ./programs/hyprlock
     ./programs/hypridle
-    ./programs/hyprcursor
+    ./programs/cursor
   ];
   systemd.user.services.hyprpolkitagent = {
     Unit = {

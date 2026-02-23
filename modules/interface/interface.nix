@@ -8,19 +8,20 @@
 }: {
   # Required packages for the interface and themes
   home.packages = with pkgs; [
-    # catppuccin-gtk
-    catppuccin-kvantum
-    # papirus-icon-theme
+    papirus-icon-theme
     bibata-cursors
   ];
 
   gtk = {
     enable = true;
-    # gtk2.force = true;
-    # iconTheme = {
-    #   name = "Papirus-Dark";
-    #   package = pkgs.papirus-icon-theme;
-    # };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  qt = {
+    enable = true;
   };
 
   dconf.settings = {
