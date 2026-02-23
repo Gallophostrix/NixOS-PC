@@ -23,6 +23,7 @@
         enableShadows = true;
         shadowDirection = "bottom_right";
         autoStartAuth = true;
+        allowPasswordWithFprintd = true;
         clockStyle = "custom";
         clockFormat = "hh:mm";
       };

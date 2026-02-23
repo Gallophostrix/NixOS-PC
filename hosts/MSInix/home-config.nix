@@ -20,7 +20,6 @@ in {
 
       ../../modules/programs/cli/cava
       ../../modules/programs/cli/direnv
-      ../../modules/programs/cli/lazygit
       ../../modules/programs/cli/shell/${shell}
       ../../modules/programs/cli/terminal/${terminal}
       ../../modules/programs/cli/yazi

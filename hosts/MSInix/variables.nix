@@ -7,7 +7,6 @@
   browser = "brave";
   tuiFileManager = "yazi";
   sddmTheme = "pixel_sakura";
-  defaultWallpaper = "evening-sky.webp"; # to change wallpaper: SUPER + SHIFT + W
   shell = "fish";
   games = true; # Whether to enable the gaming module
   data = true; # Whether to import a data partition

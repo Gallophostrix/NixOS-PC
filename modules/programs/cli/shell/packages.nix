@@ -21,9 +21,6 @@
     unzip # .zip handling
     zip
 
-    cmatrix # matrix effect
-    figlet # ascii art
-    lolcat # rainbow text
     microfetch # system info
   ];
 }

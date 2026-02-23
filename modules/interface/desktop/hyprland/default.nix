@@ -40,38 +40,18 @@
 
   home.packages = with pkgs; [
     # quickshell dependencies
-    quickshell
+    imagemagick
+    python3
     gpu-screen-recorder
-    brightnessctl
-
-    ddcutil
-
-    cliphist
-    matugen
-    wlsunset
-
-    # GTK theming
-    nwg-look
-    adw-gtk3
 
     hyprpicker
-    wf-recorder
     grimblast
     slurp
+
+    # audio
     pamixer
     pavucontrol
     playerctl
     hyprshot
-    wtype
-    # wl-clipboard
-    yad
   ];
-
-  xdg.configFile."hypr/icons" = {
-    source = ./icons;
-    recursive = true;
-  };
-
-  # Set wallpaper
-  services.swww.enable = true;
 }

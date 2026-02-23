@@ -6,12 +6,6 @@
   inputs,
   ...
 }: {
-  # Required packages for the interface and themes
-  home.packages = with pkgs; [
-    papirus-icon-theme
-    bibata-cursors
-  ];
-
   gtk = {
     enable = true;
     iconTheme = {
@@ -22,6 +16,11 @@
 
   qt = {
     enable = true;
+    platformTheme.name = "gtk3";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt6;
+    };
   };
 
   dconf.settings = {
