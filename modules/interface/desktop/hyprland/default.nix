@@ -7,7 +7,6 @@
   imports = [
     ./hyprland.nix
     ./noctalia.nix
-    ./programs/hyprlock
     ./programs/hypridle
     ./programs/cursor
   ];

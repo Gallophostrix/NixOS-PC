@@ -16,14 +16,18 @@
         animationSpeed = 1;
         animationDisabled = false;
         compactLockScreen = false;
+        lockScreenAnimation = "true";
         lockOnSuspend = true;
         showSessionButtonsOnLockScreen = true;
         showHibernateOnLockScreen = false;
         enableShadows = true;
         shadowDirection = "bottom_right";
+        autoStartAuth = true;
+        clockStyle = "custom";
+        clockFormat = "hh:mm";
       };
       ui = {
-        fontDefault = "Inter";
+        fontDefault = "DejaVu Sans";
         fontFixed = "JetBrainsMono Nerd Font";
         fontDefaultScale = 1;
         fontFixedScale = 1;
@@ -106,7 +110,6 @@
         position = "top";
         monitors = [];
         density = "default";
-        transparent = false;
         showCapsule = false;
         floating = true;
         marginVertical = 0.25;
