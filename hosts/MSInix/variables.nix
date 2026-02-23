@@ -8,6 +8,8 @@
   tuiFileManager = "yazi";
   sddmTheme = "pixel_sakura";
   shell = "fish";
+
+  vpn = true; # Whether to enable the VPN module
   games = true; # Whether to enable the gaming module
   data = true; # Whether to import a data partition
   workload = true; # Whether to import a workload partition
