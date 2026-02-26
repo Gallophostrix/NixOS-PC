@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur.url = "github:nix-community/NUR";
 
     # home-manager modules
@@ -35,6 +40,7 @@
     self,
     nixpkgs,
     home-manager,
+    sops-nix,
     ...
   }: let
     inherit (nixpkgs.lib) genAttrs;
@@ -84,6 +90,9 @@
             # Bind your Home-Manager root config (aggregates your HM modules)
             home-manager.users.${hostVars.username} = import ./hosts/${host}/home-config.nix;
           }
+
+          # Sops-nix module
+          sops-nix.nixosModules.sops
 
           # Apply overlays to nixpkgs (if any)
           ({lib, ...}: {
