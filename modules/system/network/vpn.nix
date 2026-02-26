@@ -7,6 +7,7 @@
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "client";
+    authKeyFile = config.sops.secrets."tailscale/preauth_key".path;
     extraUpFlags = [
       "--exit-node=100.64.0.3"
       "--exit-node-allow-lan-access"
