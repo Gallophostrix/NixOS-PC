@@ -18,7 +18,6 @@
   importScript = path: import path scriptArgs;
 
   scripts = [
-    (importScript ./rebuild.nix)
     (importScript ./rollback.nix)
     (importScript ./extract.nix)
     (importScript ./driverinfo.nix)

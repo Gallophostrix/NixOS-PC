@@ -68,11 +68,6 @@ cyan = '#94E2D5'
 white = '#BAC2DE'
 
 [[keyboard.bindings]]
-chars = "cd $(/nix/store/027m34av4nx0246ia2qdbfygzy9dbikw-fd-10.3.0/bin/fd . /mnt/work /mnt/work/dev/ /run /run/current-system ~/.local/ ~/ --max-depth 2 | fzf)\r"
-key = "F"
-mods = "Control"
-
-[[keyboard.bindings]]
 action = "Paste"
 key = "Y"
 mods = "Control"

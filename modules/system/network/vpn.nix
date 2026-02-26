@@ -10,6 +10,8 @@
     extraUpFlags = [
       "--exit-node=100.64.0.3"
       "--exit-node-allow-lan-access"
+      "--accept-routes"
+      "--accept-dns"
     ];
   };
 

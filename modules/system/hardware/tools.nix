@@ -5,8 +5,6 @@
       extraBackends = [pkgs.sane-airscan];
       disabledDefaultBackends = ["escl"];
     };
-    logitech.wireless.enable = false;
-    logitech.wireless.enableGraphical = false;
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -29,7 +27,6 @@
     };
     ipp-usb.enable = true;
 
-    libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
     udisks2.enable = true; # For Mounting USB & More

@@ -94,7 +94,6 @@
       # Directory Shortcuts.
       dots = "z ~/NixOS/";
       games = "z /mnt/games/";
-      work = "z /mnt/work/";
     };
   };
 }

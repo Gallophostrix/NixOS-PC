@@ -25,10 +25,7 @@
       rg = "rg --color always";
       "list-gens" = "nixos-rebuild list-generations";
       "update-input" = "nix flake update";
-      sysup = "nix flake update --flake ~/nixcfg && rebuild";
-      games = "cd /mnt/games/";
-      work = "cd /mnt/work/";
-      media = "cd /mnt/work/media/";
+      sysup = "nix flake update --flake ~/nixcfg";
     };
 
     interactiveShellInit = ''
