@@ -22,14 +22,11 @@
       {pkgs}: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            nixd
-            cachix
-            lorri
-            niv
-            nixfmt-classic
-            statix
+            nixd # LSP
+            statix # linter
+            cachix # binary cache
+            alejandra # formatter
             vulnix
-            haskellPackages.dhall-nix
           ];
         };
       }

@@ -11,23 +11,21 @@
       "yaml"
       "toml"
       "markdownlint"
-      "catppuccin"
-      "catppuccin-icons"
       "sql"
       "dockerfile"
+      "catppuccin-icons"
     ];
 
-    installRemoteServer = true;
-
     extraPackages = with pkgs; [
-      nil
-      alejandra
+      nixd
     ];
 
     userSettings = {
-      vim_mode = false;
-      base_keymap = "VSCode";
-      load_direnv = "shell_hook";
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
+      };
+      auto_update = false;
 
       theme = {
         mode = "dark";
@@ -39,16 +37,36 @@
         light = "Catppuccin Latte";
         dark = "Catppuccin Mocha";
       };
-
-      telemetry = {
-        diagnostics = true;
-        metrics = true;
-      };
-      auto_update = true;
-      show_whitespaces = "none";
       ui_font_size = lib.mkForce 14;
       buffer_font_size = lib.mkForce 13;
       buffer_font_family = "JetBrainsMono Nerd Font";
+
+      base_keymap = "VSCode";
+      vim_mode = false;
+      show_whitespaces = "none";
+      cursor_position_button = false;
+      debugger = {button = false;};
+      search = {button = false;};
+      tab_bar = {show_nav_history_buttons = false;};
+      outline_panel = {button = false;};
+      window_decorations = "server";
+
+      languages = {
+        Nix = {
+          language_servers = ["nixd"];
+        };
+      };
+      lsp = {
+        nixd = {
+          settings = {
+            nixd = {
+              formatting = {
+                command = ["alejandra"];
+              };
+            };
+          };
+        };
+      };
 
       terminal = {
         dock = "bottom";
@@ -58,32 +76,15 @@
         env.TERM = "alacritty";
       };
 
-      lsp = {
-        nil = {
-          settings = {
-            nix = {
-              flake = {
-                autoArchive = true;
-              };
-            };
-            formatting = {
-              command = ["alejandra"];
-            };
-          };
-        };
-        "rust-analyzer" = {};
-        "python-lsp-server" = {};
-      };
+      load_direnv = "shell_hook";
 
-      hour_format = "hour24";
-
-      agent = {
-        enabled = true;
-        default_model = {
-          provider = "OpenAI";
-          model = "gpt-5";
-        };
-      };
+      # agent = {
+      #   enabled = true;
+      #   default_model = {
+      #     provider = "OpenAI";
+      #     model = "gpt-5";
+      #   };
+      # };
     };
   };
   programs.ssh = {
