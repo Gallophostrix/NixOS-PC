@@ -16,19 +16,25 @@ in {
       enable = true;
       variables = ["--all"];
     };
-    settings = {
-      "$mainMod" = "SUPER";
-      "$shell" = shell;
-      "$term" = terminal;
-      "$editor" = editor;
-      "$fileManager" = "${terminal} -e ${tuiFileManager}";
-      "$browser" = browser;
-      "$CONTROL" = "CTRL";
-      "$kbdLayout" = kbdLayout;
-      "$kbdVariant" = kbdVariant;
-    };
     extraConfig = ''
-      source = ~/.config/hypr/hyprland-noctalia.conf
+      mainMod = "SUPER"
+      CTRL    = "CTRL"
+      shell   = "${shell}"
+      term   = "${terminal}"
+      editor  = "${editor}"
+      fileManager = "${terminal} -e ${tuiFileManager}"
+      browser = "${browser}"
+      kbdLayout = "${kbdLayout}"
+      kbdVariant = "${kbdVariant}"
+
+      require("hyprland-noctalia")
     '';
   };
+
+  home.file = builtins.listToAttrs (
+    map (name: {
+      name = ".config/hypr/${name}";
+      value.source = ./configs + "/${name}";
+    }) (builtins.attrNames (builtins.readDir ./configs))
+  );
 }

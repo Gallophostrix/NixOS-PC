@@ -604,8 +604,8 @@
 
       # Theme Hyprland compositor
       [templates.hyprland]
-      input_path = "~/nixcfg/modules/interface/desktop/hyprland/noctalia-templates/hyprland.conf"
-      output_path = "~/.config/hypr/hyprland-noctalia.conf"
+      input_path = "~/nixcfg/modules/interface/desktop/hyprland/noctalia-templates/hyprland.lua"
+      output_path = "~/.config/hypr/hyprland-noctalia.lua"
     '';
     plugins = {
       sources = [

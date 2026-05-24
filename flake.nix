@@ -23,7 +23,7 @@
 
     nur.url = "github:nix-community/NUR";
 
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    # millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     # home-manager modules
     noctalia = {

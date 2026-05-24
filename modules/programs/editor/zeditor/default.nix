@@ -11,6 +11,7 @@
       "nix"
       "yaml"
       "toml"
+      "lua"
       "markdownlint"
       "sql"
       "dockerfile"
