@@ -23,5 +23,11 @@
     defaultSopsFile = ../../secrets/secrets.yaml;
     age.sshKeyPaths = ["/home/mik/.ssh/id_ed25519"];
     secrets."tailscale/preauth_key" = {};
+    secrets.github_ssh_key = {
+      sopsFile = ../../secrets/secrets.yaml;
+      key = "ssh/github_private_key";
+      path = "/home/mik/.ssh/id_ed25519_github";
+      owner = "mik";
+    };
   };
 }

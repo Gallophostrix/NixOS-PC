@@ -33,7 +33,7 @@ in {
 
   home.file = builtins.listToAttrs (
     map (name: {
-      name = ".config/hypr/${name}";
+      name = ".config/hypr/configs/${name}";
       value.source = ./configs + "/${name}";
     }) (builtins.attrNames (builtins.readDir ./configs))
   );

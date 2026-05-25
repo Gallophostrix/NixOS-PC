@@ -3,9 +3,9 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia-shell")
     hl.exec_cmd("spotify", { workspace = 3 })
-    hl.exec_cmd("brave", { workspace = 6 })
+    hl.exec_cmd(browser, { workspace = 6 })
 end)
 
 hl.on("hyprland.shutdown", function()
-    hl.dsp.window.close()
+    hl.dsp.window.close_all()
 end)
