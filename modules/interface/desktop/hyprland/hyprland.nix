@@ -12,10 +12,10 @@
 in {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd = {
-      enable = true;
-      variables = ["--all"];
-    };
+    # systemd = {
+    #   enable = true;
+    #   variables = ["--all"];
+    # };
     extraConfig = ''
       mainMod = "SUPER"
       CTRL    = "CTRL"
@@ -27,7 +27,7 @@ in {
       kbdLayout = "${kbdLayout}"
       kbdVariant = "${kbdVariant}"
 
-      require("hyprland-noctalia")
+      require("configs/general")
     '';
   };
 

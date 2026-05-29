@@ -6,16 +6,6 @@ error = "rgb({{colors.error.default.hex_stripped}})"
 tertiary = "rgb({{colors.tertiary.default.hex_stripped}})"
 surface_lowest = "rgb({{colors.surface_container_lowest.default.hex_stripped}})"
 
-require("configs/envs")
-require("configs/execs")
-require("configs/rules")
-require("configs/binds")
-require("configs/general")
-
--- === Keybinds ===
-
-
-
 -- Resize (repeating)
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 10, y = 0 }), { repeating = true })
 hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.resize({ x = -10, y = 0 }), { repeating = true })

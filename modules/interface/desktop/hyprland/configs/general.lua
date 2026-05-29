@@ -1,3 +1,10 @@
+--- Require calls
+require("../hyprland-noctalia")
+require("configs/envs")
+require("configs/rules")
+require("configs/execs")
+require("configs/binds")
+
 --- Monitors
 
 hl.monitor({
@@ -123,7 +130,7 @@ hl.animation({ leaf = "workspaces",       enabled = true, speed = 7, bezier = "f
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel_smooth", style = "slidevert" })
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 3, bezier = "md3_decel" })
 
-hl.animation({ leaf = "borderangle", enabled = true, speed = 3, bezier = "fluent_decel", style = "once" })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 3, bezier = "linear", style = "once" })
 
 hl.config({
     dwindle = {
