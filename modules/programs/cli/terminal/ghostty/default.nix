@@ -5,7 +5,7 @@
     systemd.enable = true;
     installBatSyntax = true;
     settings = {
-      font-feature = ["calt" "liga" "ss01" "ss02" "ss19" "ss20"];
+      font-feature = ["calt" "liga"];
 
       window-decoration = false; # Hyprland tiling
       window-padding-x = 10;
@@ -23,7 +23,16 @@
       cursor-style = "block";
       cursor-style-blink = false;
 
+      custom-shader = "~/.config/ghostty/shaders/cursor_sweep.glsl";
+
       config-file = "~/.config/ghostty/themes/noctalia";
     };
   };
+
+  home.file = builtins.listToAttrs [
+    {
+      name = ".config/ghostty/shaders/cursor_sweep.glsl";
+      value.source = ./cursor_sweep.glsl;
+    }
+  ];
 }

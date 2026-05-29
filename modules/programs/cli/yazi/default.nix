@@ -81,19 +81,19 @@
 
         # --- Office ---
         {
-          name = "*.docx";
+          mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
           use = "office";
         }
         {
-          name = "*.doc";
+          mime = "application/msword";
           use = "office";
         }
         {
-          name = "*.xlsx";
+          mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
           use = "office";
         }
         {
-          name = "*.xls";
+          mime = "application/vnd.ms-excel";
           use = "office";
         }
       ];

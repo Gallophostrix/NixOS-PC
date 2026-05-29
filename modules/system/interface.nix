@@ -20,5 +20,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     noto-fonts-cjk-sans
+    fira-mono
+    fira-code
+    # winter-draw
   ];
 }
