@@ -21,6 +21,7 @@
 
     extraPackages = with pkgs; [
       nixd
+      lua-language-server
     ];
 
     userSettings = {
@@ -166,19 +167,22 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-
-    matchBlocks = {
+    settings = {
       "github.com" = {
-        user = "git";
-        identityFile = "/home/mik/.ssh/id_ed25519_github";
-        identitiesOnly = true;
-
-        serverAliveInterval = 60;
-        serverAliveCountMax = 3;
+        User = "git";
+        IdentityFile = "/home/mik/.ssh/id_ed25519_github";
+        IdentitiesOnly = true;
+        ServerAliveInterval = 60;
+        ServerAliveCountMax = 3;
       };
-
-      "*" = {
-        hashKnownHosts = true;
+      # "selene" = {
+      #   Host = "10.172.172.129";
+      #   User = "mik";
+      #   IdentityFile = "/home/mik/.ssh/id_ed25519_github";
+      #   IdentitiesOnly = true;
+      # };
+      "Host *" = {
+        HashKnownHosts = true;
       };
     };
   };

@@ -1,7 +1,7 @@
 -- === Autostart ===
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("noctalia-shell")
+    hl.exec_cmd("noctalia")
     hl.exec_cmd("spotify", { workspace = 3 })
     hl.exec_cmd(browser, { workspace = 6 })
 end)

@@ -60,13 +60,13 @@ local exec_binds = {
   { key = "E", exec = editor },
 
   --- Noctalia calls
-  { key = "A", exec = "noctalia-shell ipc call launcher toggle" },
-  { key = "SPACE", exec = "noctalia-shell ipc call controlCenter toggle" },
-  { key = "BackSpace", exec = "noctalia-shell ipc call sessionMenu toggle" },
-  { key = "DELETE", exec = "noctalia-shell ipc call lockScreen lock" },
-  { key = "W", exec = "noctalia-shell ipc call wallpaper toggle" },
-  { key = "less", exec = "noctalia-shell ipc call notifications toggleHistory" },
-  { key = "SHIFT + comma", exec = "noctalia-shell ipc call plugin:keybind-cheatsheet toggle" },
+  { key = "A", exec = "noctalia msg panel-toggle launcher" },
+  { key = "SPACE", exec = "noctalia msg panel-toggle control-center" },
+  { key = "BackSpace", exec = "noctalia msg panel-toggle session" },
+  { key = "DELETE", exec = "noctalia msg screen-lock" },
+  { key = "W", exec = "noctalia msg panel-toggle wallpaper" },
+  { key = "less", exec = "noctalia msg panel-toggle notifications" },
+  { key = "SHIFT + comma", exec = "noctalia msg panel-toggle keybind-cheatsheet" },
 
   --- Multimedia keys
   { key = "XF86AudioLowerVolume", exec = "pamixer -d 2", with_mod = false, opts = { locked = true, repeating = true } },
@@ -78,8 +78,8 @@ local exec_binds = {
   { key = "XF86AudioPrev", exec = "playerctl previous" },
   { key = "XF86AudioNext", exec = "playerctl next" },
 
-  { key = "XF86MonBrightnessDown", exec = "noctalia-shell ipc call brightness decrease", with_mod = false, opts = { repeating = true } },
-  { key = "XF86MonBrightnessUp", exec = "noctalia-shell ipc call brightness increase", with_mod = false, opts = { repeating = true } },
+  { key = "XF86MonBrightnessDown", exec = "noctalia msg brightness-down", with_mod = false, opts = { repeating = true } },
+  { key = "XF86MonBrightnessUp", exec = "noctalia msg brightness-up", with_mod = false, opts = { repeating = true } },
   { key = "SHIFT + XF86MonBrightnessDown", exec = "ddcutil setvcp 10 - 5", with_mod = false, opts = { repeating = true } },
   { key = "SHIFT + XF86MonBrightnessUp", exec = "ddcutil setvcp 10 + 5", with_mod = false, opts = { repeating = true } },
 }
