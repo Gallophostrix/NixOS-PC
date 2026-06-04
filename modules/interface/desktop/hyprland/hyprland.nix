@@ -18,7 +18,6 @@ in {
     # };
     extraConfig = ''
       mainMod = "SUPER"
-      CTRL    = "CTRL"
       shell   = "${shell}"
       term   = "${terminal}"
       editor  = "${editor}"

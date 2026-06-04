@@ -20,6 +20,7 @@
     ];
 
     extraPackages = with pkgs; [
+      package-version-server
       nixd
       lua-language-server
     ];
@@ -74,11 +75,32 @@
         };
       };
       lsp = {
+        package-version-server = {
+        };
         nixd = {
           settings = {
             nixd = {
               formatting = {
                 command = ["alejandra"];
+              };
+            };
+          };
+        };
+        lua-language-server = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = [
+                  "hl"
+                  "mainMod"
+                  "shell"
+                  "term"
+                  "editor"
+                  "fileManager"
+                  "browser"
+                  "kbdLayout"
+                  "kbdVariant"
+                ];
               };
             };
           };
