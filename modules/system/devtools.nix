@@ -20,7 +20,8 @@
     nix-prefetch-scripts # Find Hashes/Revisions of Nix Packages
     usbutils # get usb device info
     git
-    gh
+    forgejo
+    forgejo-cli
 
     appimage-run # AppImage runner
     killall # kill all processes
