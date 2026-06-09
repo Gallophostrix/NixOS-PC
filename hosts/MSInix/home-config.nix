@@ -35,6 +35,8 @@ in {
 
       ../../modules/interface/interface.nix
       ../../modules/interface/desktop/hyprland
+
+      ../../modules/programs/AI
     ]
     ++ lib.optional (hostVars.games or false)
     ../../modules/programs/media/gaming.nix;
