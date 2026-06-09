@@ -15,5 +15,5 @@
     # discord = prev.discord.overrideAttrs (old: { ... });
   };
 
-  # millennium = inputs.millennium.overlays.default;
+  millennium = inputs.millennium.overlays.default;
 }

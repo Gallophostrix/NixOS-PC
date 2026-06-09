@@ -6,18 +6,21 @@
     settings = {
       shell = {
         ui_scale = 1.1;
-        font_family = "DejaVu Sans";
+        font_family = "Winter Draw";
         lang = "en";
         time_format = "{:%H:%M}";
         date_format = "{:%A, %d %B %Y}";
         offline_mode = false;
         telemetry_enabled = false;
+        setup_wizard_enabled = true;
         polkit_agent = true;
+        screen_time_enabled = true;
         password_style = "random";
         avatar_path = "/mnt/data/Images/Affichage/Photo de profil/Gallophostrix.png";
         settings_show_advanced = true;
         middle_click_opens_widget_settings = true;
         show_location = true;
+        app_icon_colorize = false;
         clipboard_enabled = true;
         clipboard_history_max_entries = 50;
         clipboard_confirm_clear_history = false;
@@ -94,8 +97,19 @@
         position = "top_right";
         orientation = "horizontal";
         scale = 1.0;
-        lock_key = false;
+        background_opacity = 0.9;
+        offset_y = 10;
+        lock_keys = false;
         keyboard_layout = true;
+        monitors = ["eDP-1"];
+      };
+
+      lockscreen = {
+        blurred_desktop = false;
+        blur_intensity = 0.5;
+        tint_intensity = 0.3;
+        wallpaper_blur_intensity = 0.3;
+        wallpaper_tint_intensity = 0.3;
       };
 
       keybinds = {
@@ -103,10 +117,12 @@
         cancel = ["escape"];
       };
 
-      bar = {
-        order = ["main"];
+      location = {
+        address = "Metz, FR";
+      };
 
-        main = {
+      bar = {
+        default = {
           enabled = true;
           position = "top";
           auto_hide = false;
@@ -134,18 +150,36 @@
           capsule_radius = 8.0;
           capsule_opacity = 0.8;
 
+          capsule_group = [
+            {
+              id = "system";
+              members = [
+                "cpu_usage"
+                "cpu_temp"
+                "gpu_vram"
+                "ram_used"
+              ];
+              background = "on_secondary";
+              border = "outline";
+              padding = 6.0;
+              opacity = 0.8;
+            }
+          ];
+
           start = [
             "control-center"
             "workspaces"
             "media"
+            "audio_visualizer"
           ];
           center = [
             "caffeine"
             "clock"
+            "date"
             "weather"
           ];
           end = [
-            "sysmon"
+            "group:system"
             "network"
             "bluetooth"
             "volume"
@@ -217,19 +251,27 @@
             }
           ];
         };
-        sysmon = {
-          stat = [
-            "cpu_usage"
-            "cpu_temp"
-            "gpu_vram"
-            "ram_pct"
-            "disk_pct"
-          ];
-          path = "/";
-          display = "gauge";
+        cpu_usage = {
+          type = "sysmon";
+          stat = "cpu_usage";
           show_label = false;
-          label_min_width = 0;
         };
+        cpu_temp = {
+          type = "sysmon";
+          stat = "cpu_temp";
+          show_label = false;
+        };
+        gpu_vram = {
+          type = "sysmon";
+          stat = "gpu_vram";
+          show_label = false;
+        };
+        ram_used = {
+          type = "sysmon";
+          stat = "ram_used";
+          show_label = false;
+        };
+
         volume = {
           device = "output";
           scroll_step = 2;
@@ -258,6 +300,10 @@
           warning_threshold = 20;
           warning_color = "error";
         };
+        location = {
+          auto_locate = false;
+          address = "Metz, FR";
+        };
         brightness = {
           show_label = false;
         };
@@ -274,13 +320,13 @@
           show_label = true;
           display = "short";
         };
-        # lock_keys = {
-        #   display = "short";
-        #   show_caps_lock = true;
-        #   show_num_lock = true;
-        #   show_scroll_lock = false;
-        #   hide_when_off = true;
-        # };
+        lock_keys = {
+          display = "short";
+          show_caps_lock = false;
+          show_num_lock = true;
+          show_scroll_lock = false;
+          hide_when_off = true;
+        };
         launcher = {
           glyph = "search";
         };
@@ -311,6 +357,20 @@
         wallpaper = {
           glyph = "wallpaper-selector";
         };
+      };
+
+      control_center = {
+        sidebar = "compact";
+        sidebar_section = "compact";
+
+        shortcuts = [
+          {type = "wifi";}
+          {type = "bluetooth";}
+          {type = "power_profile";}
+          {type = "session";}
+          {type = "screen_time";}
+          {type = "clipboard";}
+        ];
       };
 
       dock = {
@@ -349,13 +409,13 @@
           audio_visualizer = {
             type = "audio_visualizer";
             output = "eDP-1";
-            cx = 920;
-            cy = 800;
-            scale = 1.0;
+            cx = 1470;
+            cy = 950;
+            scale = 2.7;
             rotation = 0.0;
             settings = {
-              bands = 32;
-              aspect_ratio = 2.5;
+              bands = 36;
+              aspect_ratio = 3.1;
               mirrored = true;
               centered = true;
               show_when_idle = true;
@@ -367,6 +427,60 @@
               background_radius = 12;
               background_padding = 10;
             };
+          };
+        };
+      };
+
+      lockscreen_widgets = {
+        enabled = true;
+        schema_version = 1;
+
+        widget = {
+          "lockscreen-login-box@DP-1" = {
+            enabled = false;
+          };
+
+          clock_main = {
+            type = "clock";
+            output = "eDP-1";
+            cx = 1670;
+            cy = 170;
+            scale = 1.85;
+          };
+          weather_main = {
+            type = "weather";
+            output = "eDP-1";
+            cx = 1710;
+            cy = 360;
+            scale = 1.0;
+          };
+          audio_visualizer_main = {
+            type = "audio_visualizer";
+            output = "eDP-1";
+            cx = 960;
+            cy = 940;
+            scale = 1.15;
+            settings = {
+              bands = 32;
+              aspect_ratio = 6;
+              mirrored = true;
+              centered = true;
+              show_when_idle = true;
+              low_color = "primary";
+              high_color = "on_primary";
+              shadow = true;
+              background = true;
+              background_color = "surface";
+              background_radius = 12;
+              background_padding = 10;
+            };
+          };
+          media_player_main = {
+            type = "media_player";
+            output = "eDP-1";
+            cx = 960;
+            cy = 760;
+            scale = 1.0;
           };
         };
       };
@@ -399,7 +513,7 @@
       };
 
       theme = {
-        mode = "auto";
+        mode = "dark";
         source = "wallpaper";
         wallpaper_scheme = "m3-content";
 
@@ -416,6 +530,7 @@
             "spicetify"
             "obsidian"
             "zed"
+            "papirus-icons"
             "steam"
             "yazi"
             "zathura"
@@ -425,6 +540,10 @@
               input_path = "~/nixcfg/modules/interface/desktop/hyprland/noctalia-templates/hyprland.lua";
               output_path = "~/.config/hypr/hyprland-noctalia.lua";
             };
+            # spicetify = {
+            #   input_path = "~/nixcfg/modules/interface/desktop/hyprland/noctalia-templates/spicetify/color.ini";
+            #   output_path = "~/.config/spicetify/Themes/Noctalia/color.ini";
+            # };
           };
         };
       };
@@ -461,10 +580,9 @@
 
       weather = {
         enabled = true;
-        auto_locate = false;
-        address = "Metz, FR";
         refresh_minutes = 30;
         unit = "metric";
+        effect = true;
       };
       calendar = {
         enabled = false;
@@ -478,7 +596,7 @@
           lock = {
             enabled = true;
             timeout = 360;
-            command = "noctalia:screen-lock";
+            command = "noctalia:session lock";
           };
           screen-off = {
             enabled = true;

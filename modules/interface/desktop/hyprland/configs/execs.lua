@@ -7,5 +7,5 @@ hl.on("hyprland.start", function()
 end)
 
 hl.on("hyprland.shutdown", function()
-    hl.dsp.window.close_all()
+    hl.dsp.window.close(browser)
 end)

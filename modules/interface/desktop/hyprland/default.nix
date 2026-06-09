@@ -48,4 +48,8 @@
     playerctl
     hyprshot
   ];
+
+  home.file.".local/share/fonts/Winter_Draw.ttf" = {
+    source = ../../fonts/Winter_Draw.ttf;
+  };
 }

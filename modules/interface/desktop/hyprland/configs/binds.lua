@@ -63,7 +63,8 @@ local exec_binds = {
     { key = "A",                             exec = "noctalia msg panel-toggle launcher" },
     { key = "SPACE",                         exec = "noctalia msg panel-toggle control-center" },
     { key = "BackSpace",                     exec = "noctalia msg panel-toggle session" },
-    { key = "DELETE",                        exec = "noctalia msg screen-lock" },
+    { key = "DELETE",                        exec = "noctalia msg session lock" },
+    { key = "Print",                         exec = "noctalia msg screenshot-region" },
     { key = "W",                             exec = "noctalia msg panel-toggle wallpaper" },
     { key = "less",                          exec = "noctalia msg panel-toggle notifications" },
     { key = "SHIFT + comma",                 exec = "noctalia msg panel-toggle keybind-cheatsheet" },
@@ -92,4 +93,4 @@ for _, bind in ipairs(exec_binds) do
     hl.bind(key, hl.dsp.exec_cmd(bind.exec), bind.opts)
 end
 
-hl.bind("CTRL + ESCAPE", hl.dsp.exec_cmd("noctalia-shell ipc call bar toggle"))
+hl.bind("CTRL + ESCAPE", hl.dsp.exec_cmd("noctalia msg bar-toggle"))
