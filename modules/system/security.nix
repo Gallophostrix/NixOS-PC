@@ -7,6 +7,13 @@
       killUnconfinedConfinables = true;
       packages = [pkgs.apparmor-profiles];
     };
+    # pam.services = {
+    #   greetd = {
+    #     enableGnomeKeyring = true;
+    #     gnupg.enable = true;
+    #   };
+    #   login.enableGnomeKeyring = true;
+    # };
   };
 
   services.fprintd = {
@@ -17,7 +24,12 @@
     };
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  programs.ssh.startAgent = true;
+
+  services.gnome = {
+    gnome-keyring.enable = true;
+    gcr-ssh-agent.enable = false;
+  };
 
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;

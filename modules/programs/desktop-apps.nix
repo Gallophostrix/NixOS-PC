@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     anki
-    bitwarden-desktop
+    # bitwarden-desktop
     freetube
     obsidian
     sparrow

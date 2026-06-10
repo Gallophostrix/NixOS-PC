@@ -12,10 +12,7 @@
 in {
   wayland.windowManager.hyprland = {
     enable = true;
-    # systemd = {
-    #   enable = true;
-    #   variables = ["--all"];
-    # };
+    systemd.enable = false;
     extraConfig = ''
       mainMod = "SUPER"
       shell   = "${shell}"

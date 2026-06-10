@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780943742,
-        "narHash": "sha256-01bTMR9ZPG+uxPaZBeOwagg5uxIaFYs2/3YIrOX+bCA=",
+        "lastModified": 1781009359,
+        "narHash": "sha256-w/mZkRscTatf8NWyUstli8ROzM/eopxZzi0WRjoeYkU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "df39142474950e42d5fc3bf2fef9d6c62abbe8d7",
+        "rev": "c58ead12efcac436afffa93a22099a5595eb4157",
         "type": "github"
       },
       "original": {
@@ -184,16 +184,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1780947164,
-        "narHash": "sha256-7Kf5Y5zp4X+XJg1Q5tLrSaLGp/mma9XZrct4/0eHdiU=",
+        "lastModified": 1781034273,
+        "narHash": "sha256-QaFEGTF8qcCOTSR1tRpSy1TrQMSXt99WiIuX5IdGcus=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "7e013e80387f3821e2c2867f1a2eac59200702b8",
+        "rev": "b242f8e01719e8705124406c3c74c59d94bd07aa",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
         "repo": "noctalia",
+        "type": "github"
+      }
+    },
+    "noctalia-greeter": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781046827,
+        "narHash": "sha256-v4jK5uLFt54sQIYk4fc/SYYkTHFQte7VNZIaQ+DaHko=",
+        "owner": "Gallophostrix",
+        "repo": "noctalia-greeter",
+        "rev": "1713cb11292bf9ac4a4759c3ab6669a09734a214",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gallophostrix",
+        "repo": "noctalia-greeter",
         "type": "github"
       }
     },
@@ -203,11 +223,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1780946787,
-        "narHash": "sha256-EQnvwkkdqEVX0+J9xfg9gbeVlvFWrZOJHJfo5VI+OVY=",
+        "lastModified": 1781034392,
+        "narHash": "sha256-Rev9XKndew0fXB1+2Nfi5gCpiv/VsC7FsIqGmXgda70=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9be094a43b6c237e5a97ccd45ea1b6bcd8da98d2",
+        "rev": "4947f6f709d8db2c6a1ae4c4e7fece0525f2959f",
         "type": "github"
       },
       "original": {
@@ -224,6 +244,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
         "noctalia": "noctalia",
+        "noctalia-greeter": "noctalia-greeter",
         "nur": "nur",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix"

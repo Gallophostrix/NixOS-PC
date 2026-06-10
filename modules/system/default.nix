@@ -13,7 +13,8 @@
       ./flatpak.nix
       ./interface.nix
       ./monitoring.nix
-      ./sddm.nix
+      # ./sddm.nix
+      ./greeter.nix
       ./security.nix
       ./system.nix
       ./users.nix

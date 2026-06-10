@@ -1,7 +1,9 @@
 {pkgs, ...}: {
-  # WM packages
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
 
   # XDG Portals
   xdg.portal = {
