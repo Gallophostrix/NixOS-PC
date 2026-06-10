@@ -22,11 +22,4 @@ in {
 
     wayland = true;
   };
-
-  xdg.desktopEntries.spotify = {
-    name = "Spotify";
-    exec = "spotify --force-device-scale-factor=1.25 %U";
-    icon = "spotify";
-    categories = ["Audio" "Music"];
-  };
 }

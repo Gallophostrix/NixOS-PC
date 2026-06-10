@@ -4,23 +4,6 @@
     ./noctalia.nix
     ./programs/cursor
   ];
-  systemd.user.services.hyprpolkitagent = {
-    Unit = {
-      Description = "Hyprpolkitagent - Polkit authentication agent";
-      After = ["graphical-session.target"];
-      Wants = ["graphical-session.target"];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-    Install = {
-      WantedBy = ["graphical-session.target"];
-    };
-  };
 
   xdg.userDirs = {
     enable = true;
