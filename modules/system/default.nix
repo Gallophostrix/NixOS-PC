@@ -9,6 +9,7 @@
       ./hardware
       ./network/network.nix
       ./network/ssh.nix
+      ./shell/fish.nix
       ./devtools.nix
       ./flatpak.nix
       ./interface.nix
