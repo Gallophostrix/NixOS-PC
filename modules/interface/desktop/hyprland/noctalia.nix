@@ -106,9 +106,9 @@
 
       lockscreen = {
         blurred_desktop = false;
-        blur_intensity = 0.5;
+        blur_intensity = 0.2;
         tint_intensity = 0.3;
-        wallpaper_blur_intensity = 0.3;
+        wallpaper_blur_intensity = 0.2;
         wallpaper_tint_intensity = 0.3;
       };
 
@@ -283,8 +283,8 @@
           mirrored = true;
           centered = true;
           show_when_idle = false;
-          low_color = "primary";
-          high_color = "tertiary";
+          color-1 = "primary";
+          color-2 = "tertiary";
         };
         media = {
           min_length = 80;
@@ -419,9 +419,9 @@
               mirrored = true;
               centered = true;
               show_when_idle = true;
-              low_color = "primary";
-              high_color = "on_tertiary";
-              shadow = true;
+              color_1 = "primary";
+              color_2 = "on_tertiary";
+              # shadow = true;
               background = true;
               background_color = "surface";
               background_radius = 12;
@@ -477,9 +477,11 @@
           };
           media_player_main = {
             type = "media_player";
-            output = "eDP-1";
-            cx = 960;
-            cy = 760;
+            output = "DP-1";
+            box_height = 240;
+            box_width = 496;
+            cx = 2180;
+            cy = 200;
             scale = 1.0;
           };
         };
@@ -506,7 +508,7 @@
 
         automation = {
           enabled = true;
-          interval_minutes = 5;
+          interval_seconds = 300;
           order = "random";
           recursive = true;
         };

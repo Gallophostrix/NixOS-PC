@@ -7,13 +7,6 @@
       killUnconfinedConfinables = true;
       packages = [pkgs.apparmor-profiles];
     };
-    # pam.services = {
-    #   greetd = {
-    #     enableGnomeKeyring = true;
-    #     gnupg.enable = true;
-    #   };
-    #   login.enableGnomeKeyring = true;
-    # };
   };
 
   services.fprintd = {
