@@ -25,15 +25,18 @@
 
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
-    # home-manager modules
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # home-manager modules
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
     };
 
     spicetify-nix = {

@@ -1,6 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  HyprPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+in {
   programs.hyprland = {
     enable = true;
+    package = HyprPkgs.hyprland;
+    portalPackage = HyprPkgs.xdg-desktop-portal-hyprland;
     withUWSM = true;
     xwayland.enable = true;
   };
@@ -12,10 +20,10 @@
     # Extra portals for Hyprland and GTK
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      HyprPkgs.xdg-desktop-portal-hyprland
     ];
     # Configuration packages for Hyprland
-    configPackages = [pkgs.hyprland];
+    configPackages = [HyprPkgs.hyprland];
   };
 
   # Icons and foreign characters
