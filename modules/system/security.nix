@@ -7,6 +7,7 @@
       killUnconfinedConfinables = true;
       packages = [pkgs.apparmor-profiles];
     };
+    pki.certificateFiles = [../../hosts/MSInix/usr-files/rootCA.pem];
   };
 
   services.fprintd = {
