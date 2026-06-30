@@ -70,6 +70,8 @@ hl.window_rule({ name = "float-misc", match = { class = "^(qt5ct|nwg-look|org.kd
 hl.window_rule({ name = "float-polkit", match = { class = "hyprpolkitagent" }, float = true })
 hl.window_rule({ name = "float-spotify", match = { class = "^(Spotify|spotify)$" }, float = true, size = { 1000, 875 }, move = { 10, 55 } })
 
+hl.window_rule({ name = "float-settings", match = { class = "dev.noctalia.Noctalia.Settings" }, float = true })
+
 hl.window_rule({
     name      = "editor-appearance",
     match     = { class = "dev.zed.Zed" },

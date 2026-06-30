@@ -46,8 +46,10 @@
           launcher_placement = "centered";
           clipboard_placement = "centered";
           control_center_placement = "attached";
-          wallpaper_placement = "centered";
-          session_placement = "centered";
+          wallpaper_placement = "floating";
+          wallpaper_position = "center";
+          session_placement = "floating";
+          session_position = "center";
           open_near_click_control_center = true;
           open_near_click_launcher = false;
           launcher_categories = true;
@@ -105,6 +107,7 @@
       };
 
       lockscreen = {
+        allow_empty_password = true;
         blurred_desktop = false;
         blur_intensity = 0.2;
         tint_intensity = 0.3;
@@ -411,6 +414,8 @@
             output = "eDP-1";
             cx = 1470;
             cy = 950;
+            box_height = 1500;
+            box_width = 950;
             scale = 2.7;
             rotation = 0.0;
             settings = {
@@ -445,6 +450,8 @@
             output = "eDP-1";
             cx = 1670;
             cy = 170;
+            box_height = 150;
+            box_width = 250;
             scale = 1.85;
           };
           weather_main = {
@@ -452,6 +459,8 @@
             output = "eDP-1";
             cx = 1710;
             cy = 360;
+            box_height = 240;
+            box_width = 500;
             scale = 1.0;
           };
           audio_visualizer_main = {
@@ -459,6 +468,8 @@
             output = "eDP-1";
             cx = 960;
             cy = 940;
+            box_height = 130;
+            box_width = 400;
             scale = 1.15;
             settings = {
               bands = 32;
@@ -619,6 +630,23 @@
         offset_y = 20;
         monitors = [];
         collapse_on_dismiss = true;
+      };
+
+      plugins = {
+        source = [
+          {
+            name = "official";
+            kind = "git";
+            location = "https://github.com/noctalia-dev/official-plugins";
+            auto_update = true;
+          }
+          {
+            name = "community";
+            kind = "git";
+            location = "https://github.com/noctalia-dev/community-plugins";
+            auto_update = true;
+          }
+        ];
       };
     };
   };
