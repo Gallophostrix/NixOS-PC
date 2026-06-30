@@ -26,6 +26,7 @@ in {
       # ../../modules/programs/media/freetube
       ../../modules/programs/media/imv
       ../../modules/programs/media/mpv
+      ../../modules/programs/media/nextcloud
       ../../modules/programs/media/spicetify
       ../../modules/programs/media/zathura
 
@@ -36,7 +37,7 @@ in {
       ../../modules/interface/interface.nix
       ../../modules/interface/desktop/hyprland
 
-      ../../modules/programs/AI
+      # ../../modules/programs/AI
     ]
     ++ lib.optional (hostVars.games or false)
     ../../modules/programs/media/gaming.nix;
