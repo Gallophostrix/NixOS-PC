@@ -16,9 +16,8 @@ in {
       copyLyrics
       shuffle # shuffle+ (special characters are sanitized out of ext names)
     ];
-    enabledCustomApps = with spicePkgs.apps; [
-      ncsVisualizer
-    ];
+    # enabledCustomApps = with spicePkgs.apps; [
+    # ];
 
     wayland = true;
   };

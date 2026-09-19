@@ -3,7 +3,7 @@
     enable = true;
     enableFishIntegration = true;
     systemd.enable = true;
-    installBatSyntax = true;
+    # installBatSyntax = true;
     settings = {
       font-feature = ["calt" "liga"];
 

@@ -31,12 +31,11 @@
         metrics = false;
       };
       auto_update = false;
+      vim_mode = true;
 
       vim = {
-        enable = true;
         use_smartcase_find = true;
         toggle_relative_line_numbers = true;
-        enable_vim_sneak = true;
       };
 
       scrollbar = {show = "never";};
@@ -117,13 +116,11 @@
 
       load_direnv = "shell_hook";
 
-      # agent = {
-      #   enabled = true;
-      #   default_model = {
-      #     provider = "OpenAI";
-      #     model = "gpt-5";
-      #   };
-      # };
+      agent = {
+        dock = "right";
+        button = false;
+        default_width = 320.0;
+      };
     };
 
     userKeymaps = [

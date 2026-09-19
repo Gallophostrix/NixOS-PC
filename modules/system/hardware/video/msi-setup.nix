@@ -12,7 +12,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     modesetting.enable = true; # Required for Wayland/PRIME
-    nvidiaSettings = true; # Handy diagnostics tool
+    nvidiaSettings = false; # Handy diagnostics tool
     powerManagement.enable = true; # Powers down dGPU when idle; better suspend/resume
 
     # Hybrid laptop: iGPU for desktop, dGPU on demand via `nvidia-offload <cmd>`
@@ -25,10 +25,9 @@
   };
 
   # Wayland + PRIME necessities; preserve VRAM across suspend helps on many laptops.
-  # boot.kernelParams = [
-  #   "nvidia-drm.modeset=1"
-  #   "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-  # ];
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+  ];
 
   # Graphics stack (32-bit for Steam/Proton). Provide both Intel & NVIDIA VA-API bits.
   hardware.graphics = {
@@ -40,22 +39,6 @@
     ];
   };
 
-  # Optional: only if you hit cursor glitches with NVIDIA on wlroots
-  # environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
-
   # CPU thermal management on Intel (recommended for laptops).
   services.thermald.enable = true;
-
-  # Enable this only if you know your platform benefits from it (mostly some ThinkPads).
-  # services.throttled.enable = true;
-
-  # If you had Intel kernel params: many are optional; keep only those you actually need.
-  # Example (use cautiously; modern kernels often auto-tune these):
-  # boot.kernelParams = boot.kernelParams ++ [
-  #   "i915.enable_guc=2"   # GuC submission (may help for media/compute scheduling)
-  #   "i915.enable_psr=1"   # Panel Self Refresh (saves power; disable if you see flicker)
-  #   "i915.enable_fbc=1"   # Framebuffer compression (saves power)
-  #   "i915.fastboot=1"     # Faster boot modesets
-  #   "mem_sleep_default=deep"
-  # ];
 }

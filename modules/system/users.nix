@@ -35,4 +35,6 @@ in {
   programs.dconf.enable = true;
 
   nix.settings.trusted-users = ["root" username];
+
+  services.accounts-daemon.enable = true;
 }
