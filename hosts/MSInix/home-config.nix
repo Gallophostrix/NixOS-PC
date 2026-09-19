@@ -31,6 +31,7 @@ in {
       ../../modules/programs/media/zathura
 
       ../../modules/programs/misc/thunar
+      ../../modules/programs/misc/udiskie
 
       ../../modules/programs/desktop-apps.nix
 
