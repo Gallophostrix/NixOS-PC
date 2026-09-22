@@ -9,6 +9,7 @@
 
     extensions = [
       "nix"
+      "nil"
       "yaml"
       "toml"
       "lua"
@@ -61,7 +62,6 @@
 
       base_keymap = "VSCode";
       show_whitespaces = "none";
-      cursor_position_button = false;
       debugger = {button = false;};
       search = {button = false;};
       tab_bar = {show_nav_history_buttons = false;};
@@ -73,15 +73,15 @@
           language_servers = ["nixd"];
         };
       };
+      format_on_save = "on";
+      formatter = "language_server";
       lsp = {
         package-version-server = {
         };
         nixd = {
           settings = {
-            nixd = {
-              formatting = {
-                command = ["alejandra"];
-              };
+            formatting = {
+              command = ["alejandra"];
             };
           };
         };
