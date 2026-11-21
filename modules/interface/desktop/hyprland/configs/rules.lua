@@ -69,6 +69,7 @@ hl.window_rule({ name = "video-effects", match = { tag = "video" }, sync_fullscr
 hl.window_rule({ name = "float-misc", match = { class = "^(qt5ct|nwg-look|org.kde.ark|Signal|com.github.rafostar.Clapper|app.drey.Warp|net.davidotek.pupgui2|eog|io.gitlab.theevilskeleton.Upscaler|pavucontrol|blueman-manager|.blueman-manager-wrapped|nm-applet|nm-connection-editor)$" }, float = true })
 hl.window_rule({ name = "float-polkit", match = { class = "hyprpolkitagent" }, float = true })
 hl.window_rule({ name = "float-spotify", match = { class = "^(Spotify|spotify)$" }, float = true, size = { 1000, 875 }, move = { 10, 55 } })
+hl.window_rule({ name = "float-bitwarden", match = { class = "brave-nngceckbapebfimnlniiiahkandclblb-Default"}, float = true})
 
 hl.window_rule({ name = "float-settings", match = { title = "Noctalia Settings" }, float = true })
 

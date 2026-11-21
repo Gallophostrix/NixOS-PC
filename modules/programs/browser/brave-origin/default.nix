@@ -1,5 +1,5 @@
 {...}: {
-  programs.brave = {
+  programs.brave-origin = {
     enable = true;
     commandLineArgs = [
       # VA-API hardware acceleration

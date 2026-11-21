@@ -12,9 +12,7 @@
       audio = {
         enable_overdrive = false;
         enable_sounds = false;
-        notification_sound = "";
         sound_volume = 0.5;
-        volume_change_sound = "";
       };
 
       backdrop = {
@@ -206,7 +204,6 @@
         main_axis_padding = 16;
         margin_edge = 8;
         margin_ends = 0;
-        monitors = [];
         pinned = [""];
         position = "bottom";
         radius = 16;

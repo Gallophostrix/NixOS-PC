@@ -12,9 +12,8 @@ in {
 
     enabledExtensions = with spicePkgs.extensions; [
       spicyLyrics
-      betterGenres
       copyLyrics
-      shuffle # shuffle+ (special characters are sanitized out of ext names)
+      shuffle
     ];
     # enabledCustomApps = with spicePkgs.apps; [
     # ];

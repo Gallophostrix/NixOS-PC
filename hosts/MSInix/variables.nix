@@ -4,7 +4,7 @@
   desktop = "hyprland";
   terminal = "ghostty";
   editor = "zeditor";
-  browser = "brave";
+  browser = "brave-origin";
   tuiFileManager = "yazi";
   sddmTheme = "pixel_sakura";
   shell = "fish";
